@@ -34,8 +34,7 @@ namespace TailSpin.SpaceGame.Web
         /// The task result contains the retrieved item.
         /// </returns>
         /// <param name="id">The identifier of the item to retrieve.</param>
-        public Task<T> GetItemAsync(string id)
-public Task<IEnumerable<T>> GetItemsAsync(
+        public Task<IEnumerable<T>> GetItemsAsync(
     Expression<Func<T, bool>> queryPredicate,
     Expression<Func<T, int>> orderDescendingPredicate,
     int page = 1, int pageSize = 10
@@ -50,7 +49,6 @@ public Task<IEnumerable<T>> GetItemsAsync(
 
     return Task<IEnumerable<T>>.FromResult(result);
 }
-
 
         /// <summary>
         /// Retrieves items from the store that match the given query predicate.
